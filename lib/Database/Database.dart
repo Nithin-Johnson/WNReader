@@ -2,9 +2,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'Tables/ChapterTable.dart';
 import 'Tables/NovelTable.dart';
-import 'Tables/HistoryTable.dart';
 import 'Tables/DownloadTable.dart';
-import 'Tables/UpdateTable.dart';
 
 
 class DatabaseHelper {
@@ -40,16 +38,13 @@ class DatabaseHelper {
       // *Tables
       await txn.execute(createNovelTableQuery);
       await txn.execute(createChapterTableQuery);
-      await txn.execute(createHistoryTableQuery);
       await txn.execute(createDownloadTableQuery);
-      await txn.execute(createUpdatesTableQuery);
 
       // *Indexes
       await txn.execute(createNovelIdIndexQuery);
       await txn.execute(createUnreadChaptersIndexQuery);
       await txn.execute(createUrlIndexQuery);
       await txn.execute(createLibraryIndexQuery);
-      await txn.execute(createChapterIdIndexQuery);
     });
   }
 }

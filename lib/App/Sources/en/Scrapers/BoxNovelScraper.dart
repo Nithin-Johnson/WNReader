@@ -70,14 +70,6 @@ class BoxNovelScraper {
         'https:' + html.querySelector('.img-cover > img')!.attributes['data-src'].toString();
     novel['summary'] = html.querySelector('.content')!.text.trim();
     novel['author'] = html.querySelector('.meta.box > p > a')?.text.trim();
-    // Novel['genre'] = html
-    //     .querySelector('div.info > div')!
-    //     .nextElementSibling
-    //     ?.nextElementSibling
-    //     ?.text
-    //     .replaceAll('Genre:', '');
-
-    //String? novelId = html.querySelector('#rating')!.attributes['data-novel-id'];
 
     Future<List> getChapters() async {
       String chapterListUrl = '${baseUrl}/api/novels/${novelURL}chapters';

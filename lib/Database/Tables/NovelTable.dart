@@ -1,7 +1,7 @@
 const createNovelTableQuery = """CREATE TABLE IF NOT EXISTS novels(
 novelId INTEGER PRIMARY KEY AUTOINCREMENT,
 novelUrl TEXT NOT NULL,
-sourceUrl TEXT NOT NULL,
+sourceUrl TEXT UNIQUE NOT NULL,
 sourceId INTEGER NOT NULL,
 source TEXT NOT NULL,
 novelName TEXT NOT NULL,

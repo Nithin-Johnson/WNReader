@@ -70,12 +70,6 @@ class NovelFullScraper {
         baseUrl + html.querySelector('div.book > img')!.attributes['src'].toString();
     novel['summary'] = html.querySelector('div.desc-text')!.text.trim();
     novel['author'] = html.querySelector('div.info > div > h3')!.nextElementSibling?.text;
-    // novel['genre'] = html
-    //     .querySelector('div.info > div')!
-    //     .nextElementSibling
-    //     ?.nextElementSibling
-    //     ?.text
-    //     .replaceAll('Genre:', '');
 
     String? novelId = html.querySelector('#rating')!.attributes['data-novel-id'];
 

@@ -53,7 +53,7 @@ WHERE novels.followed = 1 AND novelName
 LIKE '%${searchText}%'
 ''';
 
-Future<List> searchLibrary(searchText, sort, filter) async {
+Future<List> searchLibrary(searchText) async {
   Database? db = await DatabaseHelper.instance.database;
 
   List searchedNovels = await db.rawQuery(searchLibraryQuery(searchText));

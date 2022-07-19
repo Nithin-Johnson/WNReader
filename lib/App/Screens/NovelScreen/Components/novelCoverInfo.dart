@@ -5,7 +5,6 @@ class novelCoverInfo extends StatelessWidget {
 
   final String novelCover;
 
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -14,15 +13,13 @@ class novelCoverInfo extends StatelessWidget {
         elevation: 2,
         child: Container(
           decoration: BoxDecoration(
-              border:
-              Border.all(color: Colors.white, width: 2),
+              border: Border.all(color: Colors.white, width: 2),
               borderRadius: BorderRadius.circular(8)),
           height: size.height - 600,
           width: size.width - 215,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.network(novelCover,
-                fit: BoxFit.fill),
+            child: Image.network(novelCover, fit: BoxFit.fill),
           ),
         ),
       ),

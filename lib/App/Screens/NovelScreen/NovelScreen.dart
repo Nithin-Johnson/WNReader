@@ -21,11 +21,12 @@ class NovelScreen extends StatefulWidget {
 }
 
 class _NovelScreenState extends State<NovelScreen> {
-  Map novel = {};
+  Future? novel;
 
-  Future<Map> getNovelData() async {
-    novel = await getNovelAction(widget.sourceID, widget.novelURL);
-    return novel;
+  @override
+  void initState() {
+    super.initState();
+    novel = getNovelAction(widget.sourceID, widget.novelURL);
   }
 
   @override
@@ -44,13 +45,13 @@ class _NovelScreenState extends State<NovelScreen> {
             )),
         actions: [
           appBarActionButtons(
-            novel: getNovelData(),
+            novel: novel!,
           )
         ],
       ),
       body: Container(
         child: FutureBuilder(
-          future: getNovelData(),
+          future: novel,
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.data == null) {
               return LinearProgressIndicator();

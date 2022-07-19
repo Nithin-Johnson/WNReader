@@ -1,6 +1,4 @@
-
 import 'package:WNReader/Database/Queries/ChapterQueries.dart';
-
 import '../../../Services/source.dart';
 
 Future<Map> getChapterAction(sourceId, novelUrl, chapterUrl, chapterId) async{
