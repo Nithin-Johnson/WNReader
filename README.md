@@ -1,5 +1,3 @@
 # WNReader
 
-A new Flutter project.
-
-
+Currently under development.
